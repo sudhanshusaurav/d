@@ -4,7 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger)
 
-function ProjectCard({image, label, heading, category}) {
+function ProjectCard({image, label, heading, category, color}) {
     useEffect(() => {
       let tl = gsap.timeline()
       tl.to(`.project__image__${label}`,{y:-160})
@@ -21,7 +21,7 @@ function ProjectCard({image, label, heading, category}) {
     }, []);
     
   return <div className='my-8 p-8'>
-      <div className={`w-full h-[100vh] overflow-hidden hoverable hoverable-project ${label}`}>
+      <div className={`w-full h-[100vh] overflow-hidden hoverable-project border-[${color}] ${label}`}>
         <img src={image} alt={label} className={`w-full h-full object-cover scale-[1.4] translate-y-60 project__image__${label}`} />
       </div>
       <div className='text-center p-8'>

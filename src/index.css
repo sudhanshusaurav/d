@@ -26,20 +26,27 @@
     position: fixed;
         top: 0;
         left: 0;
-        width: 15px;
-        height: 15px;
-        background: #000;
+        width: 100px;
+        height: 100px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 100%;
+        background: #000;
         /* mix-blend-mode: difference; */
         z-index: 1000;
   }
 
   .hamburger{
-    @apply fixed right-2 top-8 md:top-16 md:right-4 lg:top-8 lg:right-8 z-50;
+    @apply fixed right-2 top-8 md:top-16 md:right-4 lg:top-2 lg:right-2 z-50 hover:bg-black transition-all duration-500;
+  }
+
+  .hamburger:hover div{
+    @apply bg-white;
   }
 
   .hamburger div{
-    @apply w-9 h-[3px] my-1 bg-black;
+    @apply w-9 h-[3px] my-1 bg-black transition-all duration-500;
   }
 
   .hamburger-active div:first-child{

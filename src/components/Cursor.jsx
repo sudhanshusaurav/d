@@ -2,22 +2,38 @@ import React, {useEffect} from 'react'
 
 function Cursor() {
     useEffect(() => {
-        const $bigBall = document.querySelector('.cursor__ball');
-        const $hoverables = document.querySelectorAll('.hoverable');
+        const cursorBall = document.querySelector('.cursor__ball');
+        const hoverables = document.querySelectorAll('.hoverable');
+        const hoverableProjects = document.querySelectorAll('.hoverable-project');
+        const cursorText = document.querySelector('.cursor-text')
         const cursor = document.querySelector('.cursor')
-
+        
         document.body.addEventListener('mousemove', onMouseMove);
 
-        $hoverables.forEach(hoverable => {
+        hoverableProjects.forEach(project => {
+            project.addEventListener('mouseenter',function () {
+                    cursorBall.classList.remove('scale-[.1]', 'opacity-100')
+                    cursorBall.classList.add('scale-[1]', 'opacity-50')
+                    cursorText.classList.remove('hidden')
+                    cursorText.classList.add('inline-block')
+
+            })
+            project.addEventListener('mouseleave', function () {
+                    cursorBall.classList.remove('scale-[1]', 'opacity-50')
+                    cursorBall.classList.add('scale-[.1]', 'opacity-100')
+                    cursorText.classList.remove('inline-block')
+                    cursorText.classList.add('hidden')
+            }) 
+        })
+
+        hoverables.forEach(hoverable => {
             hoverable.addEventListener('mouseenter',function () {
-                if ($bigBall.classList.contains('scale-[1]')) {
-                    $bigBall.classList.remove('scale-[1]', 'opacity-100')
-                }
-                    $bigBall.classList.add('scale-[7]', 'opacity-50')
+                    cursorBall.classList.remove('opacity-100')
+                    cursorBall.classList.add('opacity-0')
             })
             hoverable.addEventListener('mouseleave', function () {
-                    $bigBall.classList.remove('scale-[7]', 'opacity-50')
-                    $bigBall.classList.add('scale-[1]', 'opacity-100')
+                    cursorBall.classList.remove('opacity-0')
+                    cursorBall.classList.add('scale-[.1]', 'opacity-100')
             }) 
         });
 
@@ -25,14 +41,14 @@ function Cursor() {
             if (e.clientX < 5 || e.clientX > (window.innerWidth-5) || e.clientY < 5 || e.clientY > (window.innerHeight -5)) {
                 cursor.classList.remove('opacity-100')
             }else{
-                $bigBall.setAttribute("style", "top: "+(e.clientY - 7)+"px; left: "+(e.clientX - 7)+"px;")
+                cursorBall.setAttribute("style", "top: "+(e.clientY - 50)+"px; left: "+(e.clientX - 50)+"px;")
             }
         }
     })
     return (
         <div className="cursor opacity-0 lg:opacity-100">
-            <div className="transition-[transform] duration-150 ease-linear cursor__ball">
-                <p className='hidden'>view case</p>
+            <div className="transition-[transform] scale-[.1] duration-150 ease-linear cursor__ball">
+                <p className='text-white cursor-text leading-none hidden'>view <br /> case</p>
             </div>
         </div>
     )

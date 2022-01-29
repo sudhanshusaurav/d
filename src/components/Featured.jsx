@@ -12,10 +12,8 @@ function Featured() {
 
       btn.addEventListener('mousemove', function(e){
 
-        const speed = 1
-        const posX = (window.innerWidth - e.clientX * speed)/10
-        const posY = (window.innerHeight - e.clientY * speed)/10
-        // console.log(e);
+        const posX = (window.innerWidth - e.clientX)/10
+        const posY = (window.innerHeight - e.clientY)/10
 
         btn.style.transform = `translateX(${posX-50}px) translateY(${posY-10}px)`
       })
@@ -35,16 +33,16 @@ function Featured() {
       <h2 className='text-2xl'>Featured Projects</h2>
       <div className='flex flex-col lg:flex-row gap-8'>
         <div className="flex-1">
-            <ProjectCard image={P1} label='DreamFolks' heading='Amazing lounges for accomodation' category='App'/>
-            <ProjectCard image={P2} label='Fyp' heading='Growing financially independent teens' category='Branding | App | Website' />
+            <ProjectCard image={P1} label='DreamFolks' heading='Amazing lounges for accomodation' category='App' color='#FFF9E3'/>
+            <ProjectCard image={P2} label='Fyp' heading='Growing financially independent teens' category='Branding | App | Website' color='#FFF9E3' />
         </div>
         <div className="flex-1 mt-40">
-            <ProjectCard image={P3}  label='Barquillo' heading='Amazing lounges for accomodation' category='UX design, UI design'/>
-            <ProjectCard image={P4} label='Barquilllo' heading='Amazing lounges for accomodation' category='UX design, UI design' />
+            <ProjectCard image={P3}  label='Barquillo' heading='Amazing lounges for accomodation' category='UX design, UI design' color='#FFF9E3'/>
+            <ProjectCard image={P4} label='Barquilllo' heading='Amazing lounges for accomodation' category='UX design, UI design' color='#FFF9E3'/>
         </div>
       </div>
       <div className='text-center'>
-        <button className='btn-primary' data-text="View all projects">View all projects <span className='btn-primary-bg'></span></button>
+        <button className='btn-primary hoverable' data-text="View all projects">View all projects <span className='btn-primary-bg'></span></button>
       </div>
   </div>;
 }
