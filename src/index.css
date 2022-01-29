@@ -35,7 +35,7 @@
   }
 
   .hamburger{
-    @apply fixed top-8 right-8 z-50;
+    @apply fixed right-2 top-8 lg:right-8 z-50;
   }
 
   .hamburger div{
@@ -133,7 +133,7 @@
   }
 
   .hero__heading{
-    @apply text-4xl lg:text-8xl font-bold tracking-widest text-white cursor-pointer;
+    @apply text-6xl lg:text-8xl font-bold tracking-widest text-white cursor-pointer;
     -webkit-text-stroke : .1px black;
   }
 

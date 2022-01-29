@@ -30,7 +30,7 @@ function Cursor() {
         }
     })
     return (
-        <div className="cursor">
+        <div className="cursor opacity-0 lg:opacity-100">
             <div className="transition-all duration-150 ease-linear cursor__ball">
                 
             </div>
