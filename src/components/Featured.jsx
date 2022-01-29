@@ -33,12 +33,12 @@ function Featured() {
       <h2 className='text-2xl'>Featured Projects</h2>
       <div className='flex flex-col lg:flex-row gap-8'>
         <div className="flex-1">
-            <ProjectCard image={P1} label='DreamFolks' heading='Amazing lounges for accomodation' category='App' color='#FFF9E3'/>
-            <ProjectCard image={P2} label='Fyp' heading='Growing financially independent teens' category='Branding | App | Website' color='#FFF9E3' />
+            <ProjectCard image={P1} label='DreamFolks' heading='Amazing lounges for accomodation' category='App' color='yellow'/>
+            <ProjectCard image={P2} label='Fyp' heading='Growing financially independent teens' category='Branding | App | Website' color='yellow' />
         </div>
         <div className="flex-1 mt-40">
-            <ProjectCard image={P3}  label='Barquillo' heading='Amazing lounges for accomodation' category='UX design, UI design' color='#FFF9E3'/>
-            <ProjectCard image={P4} label='Barquilllo' heading='Amazing lounges for accomodation' category='UX design, UI design' color='#FFF9E3'/>
+            <ProjectCard image={P3}  label='Barquillo' heading='Amazing lounges for accomodation' category='UX design, UI design' color='yellow'/>
+            <ProjectCard image={P4} label='Barquilllo' heading='Amazing lounges for accomodation' category='UX design, UI design' color='yellow'/>
         </div>
       </div>
       <div className='text-center'>

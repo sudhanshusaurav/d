@@ -32,7 +32,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 100%;
-        background: #000;
+        /* background: #000; */
         /* mix-blend-mode: difference; */
         z-index: 1000;
   }
