@@ -42,7 +42,7 @@ function Featured() {
         </div>
       </div>
       <div className='text-center'>
-        <button className='btn-primary hoverable' data-text="View all projects">View all projects <span className='btn-primary-bg'></span></button>
+        <button className='btn-primary slider-text hoverable' data-text="View all projects">View all projects <span className='btn-primary-bg'></span></button>
       </div>
   </div>;
 }

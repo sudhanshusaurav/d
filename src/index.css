@@ -136,7 +136,24 @@
   }
 
   .nav__link{
-    @apply text-5xl font-semibold;
+    @apply text-5xl font-semibold relative overflow-hidden z-0 text-transparent inline-block;
+  }
+
+  .nav__link:hover::before{
+    @apply top-0;
+  }
+
+  .nav__link:hover::after{
+    @apply -top-full;
+  }
+
+  .nav__link::after{
+    content: attr(data-text);
+    @apply absolute w-full h-full top-0 left-0 text-black transition-all duration-500;
+  }
+  .nav__link::before{
+    content: attr(data-text);
+    @apply absolute w-full h-full top-full text-black left-0 transition-all duration-500 z-[2];
   }
 
   .hero__heading{
@@ -171,18 +188,6 @@
   .btn-primary::before{
     content: attr(data-text);
     @apply absolute w-full h-full top-full text-white left-0 px-8 py-4 transition-all duration-500 z-[2];
-  }
-
-  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
-    background: red !important;
-  }
-
-  .swiper-pagination-clickable .swiper-pagination-bullet {
-    background: red !important;
-  }
-
-  .swiper-pagination-bullet{
-    background: red !important;
   }
 }
 
