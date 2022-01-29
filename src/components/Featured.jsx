@@ -15,7 +15,7 @@ function Featured() {
         const speed = 1
         const posX = (window.innerWidth - e.clientX * speed)/10
         const posY = (window.innerHeight - e.clientY * speed)/10
-        console.log(e);
+        // console.log(e);
 
         btn.style.transform = `translateX(${posX-50}px) translateY(${posY-10}px)`
       })

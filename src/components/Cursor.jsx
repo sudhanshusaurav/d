@@ -31,11 +31,8 @@ function Cursor() {
     })
     return (
         <div className="cursor opacity-0 lg:opacity-100">
-            <div className="transition-all duration-150 ease-linear cursor__ball">
-                
-            </div>
-            <div className="transition-all duration-150 ease-linear cursor__ball--inner">
-                
+            <div className="transition-[transform] duration-150 ease-linear cursor__ball">
+                <p className='hidden'>view case</p>
             </div>
         </div>
     )

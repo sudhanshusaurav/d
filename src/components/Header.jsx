@@ -11,7 +11,7 @@ function Header() {
           <Link to='/' className=''><img src={Logo} alt="logo" /></Link>
       </div>
       <div className='flex items-center gap-4'>
-          <p onClick={() => setMenuActive(!menuActive)} className='hidden lg:block text-xl leading-none mr-12'>menu</p>
+          <p onClick={() => setMenuActive(!menuActive)} className='hidden lg:block text-xl leading-none mt-1 mr-12'>menu</p>
           <div onClick={() => setMenuActive(!menuActive)} className={`hamburger mt-1 hoverable ${menuActive ? 'hamburger-active' : 'hamburger-inactive'}`}>
               <div></div>
               <div></div>
