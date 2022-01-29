@@ -35,7 +35,7 @@
   }
 
   .hamburger{
-    @apply fixed right-2 top-8 md:top-16 md:right-4 lg:top-6 lg:right-8 z-50;
+    @apply fixed right-2 top-8 md:top-16 md:right-4 lg:top-8 lg:right-8 z-50;
   }
 
   .hamburger div{
