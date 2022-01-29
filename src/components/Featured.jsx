@@ -33,7 +33,7 @@ function Featured() {
     
   return <div className='w-[90%] mx-auto my-20'>
       <h2 className='text-2xl'>Featured Projects</h2>
-      <div className='flex gap-8'>
+      <div className='flex flex-col lg:flex-row gap-8'>
         <div className="flex-1">
             <ProjectCard image={P1} label='DreamFolks' heading='Amazing lounges for accomodation' category='App'/>
             <ProjectCard image={P2} label='Fyp' heading='Growing financially independent teens' category='Branding | App | Website' />
