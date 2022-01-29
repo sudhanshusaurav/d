@@ -157,7 +157,7 @@
   }
 
   .hero__heading{
-    @apply text-6xl lg:text-8xl font-bold tracking-widest text-white cursor-pointer;
+    @apply text-6xl lg:text-8xl font-bold tracking-widest text-white;
     -webkit-text-stroke : .1px black;
   }
 
