@@ -189,6 +189,11 @@
     content: attr(data-text);
     @apply absolute w-full h-full top-full text-white left-0 px-8 py-4 transition-all duration-500 z-[2];
   }
+
+  .swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: #b19777;
+  }
 }
 
 @layer utilities{
