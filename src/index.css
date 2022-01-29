@@ -1,13 +1,243 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: product;
+  src: url('./assets/fonts/ProductSans-Regular.ttf') format('truetype'),
+  url('./assets/fonts/ProductSans-Medium.ttf') format('truetype'),
+  url('./assets/fonts/ProductSans-Bold.ttf') format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{
+    @apply font-product;
+  }
+}
+
+@layer components {
+  
+
+  .cursor{
+    pointer-events: none;
+  }
+
+  .cursor__ball{
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        background: #000;
+        border-radius: 100%;
+        /* mix-blend-mode: difference; */
+        z-index: 1000;
+  }
+
+  /* .cursor__ball--inner{
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border-radius: 100%;
+        mix-blend-mode: difference;
+        z-index: 1000;
+  } */
+
+  /* .cursor__ball circle{
+    fill: #000;
+  } */
+
+
+  /* .cursor{
+    pointer-events: none;
+  }
+
+  .cursor__ball{
+    position: fixed;
+        top: 0;
+        left: 0;
+        mix-blend-mode: difference;
+        z-index: 1000;
+  } */
+
+  /* .cursor__ball--small circle{
+    @apply fill-black;
+  }
+
+  .cursor__ball--big circle{
+    @apply fill-black;
+  }  */
+
+  .hamburger{
+    @apply fixed top-8 right-8 z-50;
+  }
+
+  .hamburger div{
+    @apply w-9 h-[3px] my-1 bg-black;
+  }
+
+  .hamburger-active div:first-child{
+    animation: first-bar .5s linear 1 forwards;
+  }
+
+  .hamburger-active div:last-child{
+    animation: second-bar .5s linear 1 forwards;
+  }
+
+  .hamburger-inactive div:first-child{
+    animation: first-bar-inactive .5s linear 1 forwards;
+  }
+
+  .hamburger-inactive div:last-child{
+    animation: second-bar-inactive .5s linear 1 forwards;
+  }
+
+  @keyframes first-bar {
+    0%{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    30%{
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    30%{
+      @apply rotate-45 translate-y-[7px];
+    } 
+    60%{
+      @apply rotate-45 translate-y-[7px];
+    } 
+    100%{
+      @apply rotate-45 translate-y-[7px];
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }   
+  }
+
+  @keyframes second-bar {
+    0%{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    30%{
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    30%{
+      @apply -rotate-45 -translate-x-[1px];
+    }
+    60%{
+      @apply -rotate-45 -translate-x-[1px];
+    }
+    100%{
+      @apply -rotate-45 -translate-x-[1px];
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  @keyframes first-bar-inactive {
+    0%{
+      @apply rotate-45 translate-y-[7px];
+    }
+    50%{
+      @apply rotate-0 translate-y-1;
+    }
+    100%{
+      @apply rotate-0 translate-y-0;
+    }
+  }
+
+  @keyframes second-bar-inactive {
+    0%{
+      @apply -rotate-45 -translate-x-[1px];
+    }
+    50%{
+      @apply rotate-0 translate-x-0 -translate-y-1;
+    }
+    100%{
+      @apply rotate-0 translate-x-0 translate-y-0;
+    }
+  }
+
+  .menu{
+    @apply clip-right transition-all duration-300 z-40;
+  }
+
+  .menu--open{
+    @apply clip-full;
+  }
+
+  .nav__link{
+    @apply text-5xl font-semibold;
+  }
+
+  .hero__heading{
+    @apply text-8xl font-bold tracking-widest text-white cursor-pointer;
+    -webkit-text-stroke : .1px black;
+  }
+
+  .btn-primary{
+    @apply px-8 py-4 border-[1px] rounded-full relative z-0 overflow-hidden text-transparent;
+  }
+
+  .btn-primary-bg{
+    @apply absolute w-full h-0 top-0 left-0 bg-black transition-[height] duration-500;
+  }
+
+  /* .btn-primary:hover .btn-primary-bg {
+    @apply h-full;
+  } */
+
+  .btn-primary:hover::before{
+    @apply top-0;
+  }
+
+  .btn-primary:hover::after{
+    @apply -top-full;
+  }
+
+  .btn-primary::after{
+    content: attr(data-text);
+    @apply absolute w-full h-full top-0 left-0 px-8 py-4 text-black transition-all duration-500;
+  }
+  .btn-primary::before{
+    content: attr(data-text);
+    @apply absolute w-full h-full top-full text-white left-0 px-8 py-4 transition-all duration-500 z-[2];
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    background: red !important;
+  }
+
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+    background: red !important;
+  }
+
+  .swiper-pagination-bullet{
+    background: red !important;
+  }
+}
+
+@layer utilities{
+  .clip-left{
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+
+  .clip-right{
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+
+  .clip-full{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .clip-round-top{
+    clip-path: circle(5.7% at 50% 0);
+  }
+
+  .clip-round-full{
+    clip-path: circle(102.3% at 50% 0);
+  }
+
+  .clip-round-bottom{
+    clip-path: circle(5.7% at 50% 100%);
+  }
 }
